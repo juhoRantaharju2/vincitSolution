@@ -32,7 +32,7 @@ const down = () => {
     let endDateInUnix = Math.round(endDate.getTime() / 1000);
 
   
-    let url =   "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd" + "&from=" + startDateInUnix + "&to=" + endDateInUnix;  
+    let url =   "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur" + "&from=" + startDateInUnix + "&to=" + endDateInUnix;  
   
     getData(url).then(data =>{
 

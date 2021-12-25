@@ -1,29 +1,21 @@
 const calculateUp = (data) => {
     //console.log(data);
 
-    let temp = 0, days, longestDayStreak = 0;
+    let maxVolume = 0, maxVolumeDay = 0;
 
-    for (let i = 0; i < data.prices.length; i++)  {
+    for (let i = 0; i < data.total_volumes.length; i++)  {
         
-        if(temp != '' && temp > data.prices[i][1]) {
+        maxVolume = Math.max(maxVolume, data.total_volumes[i][1])
         
-            days++;
-    
-        } else {
-
-            days = 1;
-        }
-
-        temp = data.prices[i][1];
-
-        if(days > longestDayStreak) {
-            longestDayStreak = days;
-        }
+        if (data.total_volumes[i][1] === maxVolume)
+            maxVolumeDay = data.total_volumes[i][0];
     
     }
 
-    console.log(longestDayStreak);
+    let maxVolumeDate = new Date(maxVolumeDay * 1000); 
 
-        document.getElementById("testLabel").innerHTML = 'This is the longest up streak: ' + longestDayStreak;
+
+    document.getElementById("testLabel").innerHTML = 'The highest trading volume was in ' + maxVolumeDate + '. The volume on that day was ' + maxVolume + ' in euros.';
 };
 
+// This is supposed to be the highest trading volume. Have to redo!!!
