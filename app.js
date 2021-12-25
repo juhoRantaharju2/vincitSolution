@@ -1,4 +1,6 @@
-const submitButton = document.getElementById("down");
+const downButton = document.getElementById("down");
+const upButton = document.getElementById("up");
+const timeMachineButton = document.getElementById("timeMachine");
 const start = document.getElementById("start");
 const end = document.getElementById("end");
 
@@ -17,27 +19,18 @@ async function getData(url){
 
 /*
 
-    This is the main function that handles user input and data
+    This is the down function for figuring out how many down days there are
 
     */
 
-//function logi() {
-const logi = () => {
+const down = () => {
+
     let startDate = new Date(start.value);
     let endDate = new Date(end.value);
 
-	//console.log("text");
-  //console.log(response);
-    //console.log(start.value);
-  //startDate = start.value;
-    //console.log(startDate.getDate());
-    //console.log(endDate.getDate());
-  
     let startDateInUnix = Math.round(startDate.getTime() / 1000); 
     let endDateInUnix = Math.round(endDate.getTime() / 1000);
-  
-    //console.log(startDateInUnix);
-    //console.log(endDateInUnix);
+
   
     let url =   "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd" + "&from=" + startDateInUnix + "&to=" + endDateInUnix;  
   
@@ -45,12 +38,57 @@ const logi = () => {
 
         logData(data);
         calculateDown(data);
- 
         
     });
-  
-  //console.log(startDate.getMilliseconds());
 
 };
 
-submitButton.addEventListener("click", logi);
+/*
+
+    This is the up function for figuring out how many up days there are
+
+    */
+
+const up = () => {
+
+    let startDate = new Date(start.value);
+    let endDate = new Date(end.value);
+    
+    let startDateInUnix = Math.round(startDate.getTime() / 1000); 
+    let endDateInUnix = Math.round(endDate.getTime() / 1000);
+    
+      
+    let url =   "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd" + "&from=" + startDateInUnix + "&to=" + endDateInUnix;  
+      
+    getData(url).then(data =>{
+    
+        logData(data);
+        calculateUp(data);
+            
+    });
+    
+};
+
+const timeMachineCal = () => {
+
+    let startDate = new Date(start.value);
+    let endDate = new Date(end.value);
+    
+    let startDateInUnix = Math.round(startDate.getTime() / 1000); 
+    let endDateInUnix = Math.round(endDate.getTime() / 1000);
+    
+      
+    let url =   "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=usd" + "&from=" + startDateInUnix + "&to=" + endDateInUnix;  
+      
+    getData(url).then(data =>{
+    
+        logData(data);
+        timeMachineCalc(data);
+            
+    });
+    
+};
+
+upButton.addEventListener("click", up);
+downButton.addEventListener("click", down);
+timeMachineButton.addEventListener("click", timeMachineCal);

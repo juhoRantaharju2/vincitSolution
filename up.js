@@ -1,15 +1,11 @@
-const logData = (data) => {
-    console.log(data);
-};
-
-const calculateDown = (data) => {
+const calculateUp = (data) => {
     //console.log(data);
 
     let temp = 0, days, longestDayStreak = 0;
 
     for (let i = 0; i < data.prices.length; i++)  {
         
-        if(temp != '' && temp < data.prices[i][1]) {
+        if(temp != '' && temp > data.prices[i][1]) {
         
             days++;
     
