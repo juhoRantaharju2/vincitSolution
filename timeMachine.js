@@ -31,6 +31,9 @@ const timeMachineCalc = (data) => {
     console.log(maxDay)
     console.log(minDate);
     console.log(maxDate);
+
+    document.getElementById("testLabel").innerHTML = 'This is the best day to go to for lowest price: ' + minDate;
     
+    document.getElementById("testsLabel").innerHTML = 'This is the best day to go to for highest price: ' + maxDate;
 
 };

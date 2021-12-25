@@ -24,5 +24,6 @@ const calculateUp = (data) => {
 
     console.log(longestDayStreak);
 
+        document.getElementById("testLabel").innerHTML = 'This is the longest up streak: ' + longestDayStreak;
 };
 
