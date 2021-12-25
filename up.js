@@ -16,6 +16,5 @@ const calculateUp = (data) => {
 
 
     document.getElementById("testLabel").innerHTML = 'The highest trading volume was in ' + maxVolumeDate + '. The volume on that day was ' + maxVolume + ' in euros.';
+    document.getElementById("testsLabel").innerHTML = ' ';
 };
-
-// This is supposed to be the highest trading volume. Have to redo!!!
