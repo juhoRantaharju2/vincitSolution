@@ -24,16 +24,9 @@ const timeMachineCalc = (data) => {
 
     let minDate = new Date(minDay * 1000);
     let maxDate = new Date(maxDay * 1000);  
-    
-    console.log(max);
-    console.log(min);
-    console.log(minDay)
-    console.log(maxDay)
-    console.log(minDate);
-    console.log(maxDate);
 
-    document.getElementById("testLabel").innerHTML = 'This is the best day to go to for lowest price: ' + minDate;
+    document.getElementById("testLabel").innerHTML = 'The best day to go to for buying is: ' + minDate;
     
-    document.getElementById("testsLabel").innerHTML = 'This is the best day to go to for highest price: ' + maxDate;
+    document.getElementById("testsLabel").innerHTML = 'The best day to go to for selling is: ' + maxDate;
 
 };

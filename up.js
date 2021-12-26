@@ -14,7 +14,6 @@ const calculateUp = (data) => {
 
     let maxVolumeDate = new Date(maxVolumeDay * 1000); 
 
-
     document.getElementById("testLabel").innerHTML = 'The highest trading volume was in ' + maxVolumeDate + '. The volume on that day was ' + maxVolume + ' in euros.';
     document.getElementById("testsLabel").innerHTML = ' ';
 };

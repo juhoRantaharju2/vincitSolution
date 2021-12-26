@@ -26,8 +26,6 @@ const calculateDown = (data) => {
     
     }
 
-    console.log(longestDayStreak);
-
     document.getElementById("testLabel").innerHTML = 'This is the longest down streak: ' + longestDayStreak;
     document.getElementById("testsLabel").innerHTML = ' ';
 
